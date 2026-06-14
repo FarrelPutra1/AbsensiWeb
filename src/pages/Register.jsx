@@ -9,7 +9,7 @@ export default function Register() {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  const API_URL = "http://localhost:5062/api/auth/register";
+  const API_URL = `${import.meta.env.VITE_API_URL}/api/auth/register`;
 
   const handleRegister = async (e) => {
     e.preventDefault();

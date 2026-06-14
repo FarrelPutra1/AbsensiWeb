@@ -8,7 +8,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const { login } = useContext(AuthContext);
 
-  const API_URL = "http://localhost:5062/api/auth/login";
+  const API_URL = `${import.meta.env.VITE_API_URL}/api/auth/login`;
 
   const handleLogin = async (e) => {
     e.preventDefault();

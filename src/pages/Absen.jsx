@@ -10,9 +10,8 @@ export default function Absen() {
   const [jamPulang, setJamPulang] = useState(null);
   const [editId, setEditId] = useState(null);
 
-  const API_ATTENDANCE = "http://localhost:5062/api/attendances";
-  const API_STUDENTS = "http://localhost:5062/api/students";
-
+  const API_ATTENDANCE = `${import.meta.env.VITE_API_URL}/api/attendance`;
+  const API_STUDENTS = `${import.meta.env.VITE_API_URL}/api/students`;
   const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
     return {
