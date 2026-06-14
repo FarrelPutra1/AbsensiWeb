@@ -6,7 +6,11 @@ export default function Siswa() {
   const [nomorInduk, setNomorInduk] = useState("");
   const [editId, setEditId] = useState(null);
 
-  const API_URL = "http://localhost:5062/api/students";
+  // --- PERUBAHAN DI SINI ---
+  // Jika di Vercel ada VITE_API_URL, pakai itu. Jika tidak ada (di laptop), otomatis pakai localhost.
+  const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5062";
+  const API_URL = `${BASE_URL}/api/students`;
+  // -------------------------
 
   const fetchStudents = () => {
     fetch(API_URL)
