@@ -20,7 +20,12 @@ export default function Register() {
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password, namaLengkap })
+        // PERBAIKAN: Mengubah properti JSON menjadi PascalCase agar sesuai dengan Model di backend .NET
+        body: JSON.stringify({ 
+          Username: username, 
+          Password: password, 
+          NamaLengkap: namaLengkap 
+        })
       });
 
       if (response.ok) {
