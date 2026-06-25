@@ -14,9 +14,12 @@ export default function Absen() {
   const API_STUDENTS = `${import.meta.env.VITE_API_URL}/api/students`;
   const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
+    // Bersihkan token dari enter (\n atau \r) dan spasi gaib di ujungnya
+    const cleanToken = token ? token.replace(/\n|\r/g, "").trim() : "";
+    
     return {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      "Authorization": `Bearer ${cleanToken}`,
     };
   };
 
